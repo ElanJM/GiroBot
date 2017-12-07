@@ -53,11 +53,11 @@ class TestWebhookParser(unittest.TestCase):
         with open(webhook_sample_json_path) as fp:
             body = fp.read()
 
-        parser = WebhookParser('channel_secret')
+        parser = WebhookParser('bc1445fa31789d24b3cebe96a69b5010')
         # mock
         parser.signature_validator.validate = lambda a, b: True
 
-        events = parser.parse(body, 'channel_secret')
+        events = parser.parse(body, 'bc1445fa31789d24b3cebe96a69b5010')
 
         # MessageEvent, SourceUser, TextMessage
         self.assertIsInstance(events[0], MessageEvent)
@@ -309,7 +309,7 @@ class TestWebhookParser(unittest.TestCase):
 
 class TestWebhookHandler(unittest.TestCase):
     def setUp(self):
-        self.handler = WebhookHandler('channel_secret')
+        self.handler = WebhookHandler('bc1445fa31789d24b3cebe96a69b5010')
         self.calls = []
 
         @self.handler.add(MessageEvent, message=TextMessage)
