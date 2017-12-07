@@ -36,7 +36,7 @@ class TestLineBotApi(unittest.TestCase):
     maxDiff = None
 
     def setUp(self):
-        self.tested = LineBotApi('channel_secret')
+        self.tested = LineBotApi('bc1445fa31789d24b3cebe96a69b5010')
 
         self.button_template_message = TemplateSendMessage(
             alt_text='Buttons template',
