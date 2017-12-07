@@ -29,7 +29,7 @@ from linebot.models import (
 
 class TestSendTestMessage(unittest.TestCase):
     def setUp(self):
-        self.tested = LineBotApi('channel_secret')
+        self.tested = LineBotApi('bc1445fa31789d24b3cebe96a69b5010')
 
         # test data
         self.text_message = TextSendMessage(text='Hello, world')
